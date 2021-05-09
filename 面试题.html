@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>面试题</title>
+</head>
+<body><h1 id='面试题'>面试题</h1>
+<ol start='' >
+<li><p>说一下防抖函数，节流函数，实现防抖函数?</p>
+</li>
+<li><pre><code class='language-javascript' lang='javascript'>var F = function () {};
+Object.prototype.a = function () {};
+Function.prototype.b = function () {};
+var f = new F();
+/*
+请问 F 有方法 a，方法 b 吗？
+请问 f 有方法 a，方法 b 吗？
+*/
+</code></pre>
+</li>
+<li><pre><code class='language-javascript' lang='javascript'>function foo() {
+  var funcs = [];
+  for (var i = 0; i &lt; 3; i++) {
+    funcs.push(function () {
+      console.log(&quot;func&quot;, i);
+    });
+  }
+  return funcs;
+}
+var xs = foo();
+xs.forEach(x =&gt; x());
+// 写出输出
+</code></pre>
+</li>
+<li><pre><code class='language-javascript' lang='javascript'>setTimeout(function () {
+  console.log(&quot;1&quot;);
+});
+
+new Promise(function (resolve) {
+  console.log(&quot;2&quot;);
+  resolve();
+}).then(function () {
+  console.log(&quot;3&quot;);
+});
+
+console.log(&quot;4&quot;);
+// 写出输出，说一下为什么？
+</code></pre>
+</li>
+<li><pre><code class='language-javascript' lang='javascript'>function shellSort(arr) {
+  // 实现希尔排序
+}
+const arr = [26, 53, 67, 48, 57, 13, 48, 32, 60, 50];
+console.log(arr);
+console.log(shellSort(arr));
+</code></pre>
+</li>
+<li><p>给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 <code>null</code>。</p>
+</li>
+<li><p>实现深拷贝。</p>
+</li>
+<li><p>实现数组去重函数。</p>
+</li>
+
+</ol>
+<p>&nbsp;</p>
+</body>
+</html>

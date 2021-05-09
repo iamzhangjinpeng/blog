@@ -29,12 +29,13 @@ xz.func("成都", "上海");
 ## 实现
 
 ```javascript
-Function.prototype.myBind = function (ctx) {
+Function.prototype.myBind = function () {
+  let ctx = Array.prototype.shift.call(arguments);
   ctx = ctx || window;
-  var fn = this;
-  var args = [...arguments].slice(1);
+  let fn = this;
+  var args = arguments;
   return function () {
-    return fn.apply(ctx, args.concat(...arguments));
+    fn.apply(ctx, [...args, ...arguments]);
   };
 };
 ```

@@ -26,11 +26,12 @@ xz.func("成都", "上海");
 ## 实现
 
 ```javascript
-Function.prototype.myApply = function (ctx) {
+Function.prototype.myApply = function () {
+  let ctx = Array.prototype.shift.call(arguments);
   ctx = ctx || window;
   ctx.fn = this;
-  var args = arguments[1] || [];
-  var result = ctx.fn(...args);
+  let args = arguments[0] || [];
+  let result = ctx.fn(...args);
   delete ctx.fn;
   return result;
 };
