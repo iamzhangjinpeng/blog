@@ -35,7 +35,7 @@ Function.prototype.myBind = function () {
   let fn = this;
   var args = arguments;
   return function () {
-    fn.apply(ctx, [...args, ...arguments]);
+    return fn.apply(ctx, [...args, ...arguments]);
   };
 };
 ```

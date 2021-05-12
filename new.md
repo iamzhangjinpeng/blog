@@ -1,15 +1,20 @@
 # new
 
 ```javascript
-function newFake() {
-  // 构造函数 constructor
-  const constructor = Array.prototype.shift.call(arguments);
-  const obj = new Object();
-  obj.__proto__ = constructor.prototype;
-  // var obj = Object.create(constructor.prototype);
-  constructor.apply(obj, arguments);
+function new1() {
+  let F = Array.prototype.shift.call(arguments);
+  let obj = Object.create(F.prototype);
+  /*
+  function create(o) {
+    let F = function () {};
+    F.prototype = o;
+    return new F();
+  }
+  */
+  F.apply(obj, arguments);
   return obj;
 }
+
 
 function Dog(name) {
   this.name = name;
