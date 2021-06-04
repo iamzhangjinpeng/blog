@@ -7,3 +7,4 @@ Object.create = function (o) {
   return new F();
 };
 ```
+
